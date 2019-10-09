@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Props</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Text = React.createClass({
+            render: function() {
+
+                return(
+                    <div>
+                        <h1>{this.props.name}</h1>
+                        <h2>{this.props.genre}</h2>    
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <div>
+                <Text name="Avatar" genre="Action" />
+                <Text name="Harry Potter" genre="Magic" />
+                <Text name="Dark Knight" genre="Dark" />
+                <Text name="Fast & Furious" genre="Racing" />
+                <Text name="The Notebook" genre="Romance" />
+            </div>
+        , document.getElementById('container')
+        );
+        
+    </script>
+
+</body>
+</html>

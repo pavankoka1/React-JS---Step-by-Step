@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Event Handlers</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Text = React.createClass({
+
+            edit: function () {
+                alert('Editing Comment!');    
+            },
+
+            remove: function () {
+                alert('Removing Comment!');    
+            },
+
+            render: function() {
+
+                return(
+                    <div className="commentContainer">
+                        <p className="commentText">{this.props.children}</p>
+                        <button className="button-primary" onClick={this.edit}>Edit</button>
+                        <button className="button-danger" onClick={this.remove}>Remove</button>  
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(
+            <div className="board">
+                <Text>Fetched using childern property</Text>
+            </div>
+        , document.getElementById('container')
+        );
+        
+    </script>
+
+</body>
+</html>

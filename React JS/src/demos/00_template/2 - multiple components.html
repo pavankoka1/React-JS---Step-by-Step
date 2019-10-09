@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Multiple Component</title>
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Component = React.createClass({
+
+            render: function() {
+                return (
+                    <div>
+                        <h2>Welcome to the world of React JS</h2>
+                        <p>Hope you are doing well so far!</p>
+                    </div>
+                );
+            }
+
+        });
+
+        ReactDOM.render(
+            <div>
+                <Component />
+                <Component />
+                <Component />    
+            </div>
+        , document.getElementById('container')
+        );
+        
+    </script>
+
+</body>
+</html>
